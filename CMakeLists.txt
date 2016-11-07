@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.0)
-project(eos)
+set(PROJECT_NAME_STR eos)
+project($(PROJECT_NAME_STR) C CXX)
+
 
 # define the project
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
@@ -13,9 +15,16 @@ include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_SOURCE_DIR}/include)
 file(GLOB_RECURSE INCLUDES include/*.hpp)
 file(GLOB_RECURSE SOURCES src/*.cpp)
 
+set(EXT_PROJECTS_DIR ${PROJECT_SOURCE_DIR}/ext)
 
 # Create static library
-add_library(${PROJECT_NAME} STATIC ${INCLUDES} ${SOURCES})
+add_library(${PROJECT_NAME_STR} STATIC ${INCLUDES} ${SOURCES})
 
 
 add_subdirectory(Samples)
+
+add_subdirectory(${EXT_PROJECTS_DIR}/gtest)
+
+#--------------------
+# Gtest
+
