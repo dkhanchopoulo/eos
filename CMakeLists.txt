@@ -23,7 +23,7 @@ add_library(${PROJECT_NAME_STR} STATIC ${INCLUDES} ${SOURCES})
 
 add_subdirectory(Samples)
 
-add_subdirectory(${EXT_PROJECTS_DIR}/gtest)
+add_subdirectory(Tests)
 
 #--------------------
 # Gtest
