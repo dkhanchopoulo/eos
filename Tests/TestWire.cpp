@@ -29,7 +29,7 @@ TEST(Wire, Positive)
               .masking("%", 2, 1).str(), "f*%k");
     
     
-    EXPECT_EQ(wire("omen") + 666, wire("omen666"));
+    EXPECT_EQ(wire("Ni") + 772, wire("Ni772"));
     
     EXPECT_EQ(wire("clown"), join(vector<char>({'c', 'l', 'o', 'w', 'n'})));
     EXPECT_EQ(wire("c.l.o.w.n"), join(vector<char>({'c', 'l', 'o', 'w', 'n'}), wire(".")));
